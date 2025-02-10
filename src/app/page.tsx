@@ -17,14 +17,15 @@ const Home = () => {
 
   const handleLogout = () => {
     localStorage.removeItem("profile");
-    setProfile(null); // Reset profile state
+    document.cookie = "token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 UTC;";
+    setProfile(null);
   };
 
   return (
     <div className="relative min-h-screen bg-cover bg-center bg-no-repeat">
       {/* Navbar */}
       <div className="absolute inset-x-0 top-0 p-6 flex justify-between items-center space-x-4 z-50 bg-black bg-opacity-50">
-        <div className="text-white font-bold text-xl">Expenses Tracker</div>
+        <div className="text-white font-bold text-xl">Expense Tracker</div>
         <div className="flex space-x-4">
           {!profile ? (
             <>

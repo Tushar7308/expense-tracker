@@ -34,7 +34,7 @@ const LoginPage = () => {
       const data = JSON.parse(text);
       
       localStorage.setItem("profile", JSON.stringify(data));
-      
+      document.cookie = `token=${data.token}; path=/; Secure`;
       router.push("/");
     } catch (err: any) {
       setError(err.message);
