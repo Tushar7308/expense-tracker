@@ -1,7 +1,7 @@
 # Expense Tracker App
 
 ## Live Deployment
-[Click here to view the live application](https://my-project-31lqlpene-tushar-vermas-projects-77aedfe3.vercel.app/)  
+[Click here to view the live application](https://my-project-three-liard.vercel.app/)  
 
 ## Overview
 The **Expense Tracker App** is a full-stack web application built with **Next.js 14**, providing users with an intuitive interface to manage their expenses efficiently. The application supports user authentication, data persistence with a database, and full **CRUD (Create, Read, Update, Delete)** operations.
