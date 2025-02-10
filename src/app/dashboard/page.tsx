@@ -32,7 +32,7 @@ const Dashboard = () => {
     if (profile && profile.token) {
       fetchExpenses(profile.token);
     }
-  }, [profile]); // Fetch expenses only after profile is set
+  }, [profile]);
 
   const fetchExpenses = async (token: string) => {
     setLoading(true);
@@ -49,7 +49,7 @@ const Dashboard = () => {
 
       const data = await res.json();
       if (res.ok) {
-        setExpenses(data.data); // Store fetched expenses
+        setExpenses(data.data);
       } else {
         setError(data.message || "Failed to fetch expenses");
       }
@@ -77,7 +77,7 @@ const Dashboard = () => {
 
       if (response.ok) {
         alert("Expense deleted successfully!");
-        setExpenses((prev) => prev.filter((expense) => expense._id !== id)); // Remove from state
+        setExpenses((prev) => prev.filter((expense) => expense._id !== id));
       } else {
         alert("Failed to delete expense.");
       }

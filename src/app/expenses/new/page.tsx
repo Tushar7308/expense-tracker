@@ -44,8 +44,8 @@ const AddExpense = () => {
 
       if (response.ok) {
         alert("Expense added successfully!");
-        reset(); // Clear the form
-        router.push("/dashboard"); // Redirect to dashboard
+        reset();
+        router.push("/dashboard");
       } else {
         const errorData = await response.json();
         setError(errorData.message || "Failed to add expense.");

@@ -16,7 +16,6 @@ export async function POST(req: Request) {
             return NextResponse.json({ message: 'User already exists', status: false }, { status: 400 });
         }
 
-        // Hash the password before saving
         const hashedPassword = await bcrypt.hash(password, 10);
 
         // Create a new user
@@ -28,7 +27,6 @@ export async function POST(req: Request) {
             createdAt: new Date() 
         });
 
-        // Create JWT token
         const token = createToken(newUser);
 
         return NextResponse.json({ message: 'User created successfully', token, status: true }, { status: 201 });

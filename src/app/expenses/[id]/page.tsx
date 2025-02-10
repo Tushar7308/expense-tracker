@@ -20,7 +20,7 @@ const EditExpense = () => {
     register,
     handleSubmit,
     setValue,
-    reset, // Use reset() instead of setValue for pre-filling form data
+    reset,
     formState: { errors },
   } = useForm<ExpenseFormData>();
 
@@ -34,7 +34,6 @@ const EditExpense = () => {
     }
   }, []);
 
-  // Fetch existing expense details when token and id are available
   useEffect(() => {
     if (!token || !id) return;
 
@@ -55,7 +54,6 @@ const EditExpense = () => {
         const expense = await response.json();
 
         console.log(expense, "expense");
-        // Prefill form fields
         reset({
           amount: expense.data.amount,
           category: expense.data.category,

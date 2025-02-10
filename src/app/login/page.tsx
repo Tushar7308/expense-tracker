@@ -25,8 +25,6 @@ const LoginPage = () => {
         body: JSON.stringify(formData),
       });
 
-      console.log(res,"res-------->")
-
       if (!res.ok) throw new Error("Login failed");
 
       const text = await res.text();
@@ -37,7 +35,6 @@ const LoginPage = () => {
       
       localStorage.setItem("profile", JSON.stringify(data));
       
-      // Redirect to dashboard on success
       router.push("/");
     } catch (err: any) {
       setError(err.message);

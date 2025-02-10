@@ -26,14 +26,12 @@ export async function POST(req: Request) {
     // Create JWT token
     const token = createToken(user);
 
-    // Respond with token
     return NextResponse.json({ message: 'Login successful', token, user }, { status: 200 });
   } catch (error) {
     return NextResponse.json({ message: 'Server error' }, { status: 500 });
   }
 }
 
-// Optional: Prevent other methods
 export async function OPTIONS() {
   return NextResponse.json({}, { status: 200 });
 }
